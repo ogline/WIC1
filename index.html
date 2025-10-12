@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAA & BBB - Wedding Celebration | نکاح ولیمہ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --deep-blue: #0A1931;
+            --light-blue: #185ADB;
+            --cream: #FEFBF3;
+            --dark-red: #8B0000;
+            --digital-green: #00ff41;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #1a1a2e 100%);
+            color: var(--cream);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        body.urdu {
+            font-family: 'Noto Nastaliq Urdu', 'Poppins', sans-serif;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .header-content {
+            animation: fadeIn 2s ease-out;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .urdu h1 {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            color: var(--cream);
+        }
+
+        .urdu .subtitle {
+            letter-spacing: 0;
+        }
+
+        .bismillah {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .bismillah-arabic {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .couple-names {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .name::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .name:hover::before {
+            left: 100%;
+        }
+
+        .and {
+            font-size: 2rem;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .urdu .and {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--light-blue));
+        }
+
+        .urdu .event-card::before {
+            left: auto;
+            right: 0;
+        }
+
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .urdu .event-title {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            flex-direction: row-reverse;
+        }
+
+        .event-details {
+            margin-bottom: 20px;
+        }
+
+        .event-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .urdu .event-details p {
+            flex-direction: row-reverse;
+        }
+
+        .event-details i {
+            color: var(--gold);
+            width: 20px;
+        }
+
+        .date {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--light-blue);
+            margin: 15px 0;
+        }
+
+        /* Countdown Timer Styles */
+        .countdown-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .countdown-title {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .urdu .countdown-title {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-value {
+            font-family: 'Courier New', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--digital-green);
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+            text-shadow: 0 0 5px var(--digital-green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-value::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--cream);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .urdu .countdown-label {
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        /* Animation Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-duration: 20s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            left: 80%;
+            animation-duration: 25s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 70px;
+            height: 70px;
+            top: 80%;
+            left: 20%;
+            animation-duration: 15s;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            top: 30%;
+            left: 70%;
+            animation-duration: 30s;
+        }
+
+        /* Visitor Counter */
+        .visitor-counter {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .counter-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .urdu .counter-title {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--light-blue);
+            text-shadow: 0 0 10px rgba(24, 90, 219, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blessing {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .urdu .blessing {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cream);
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .urdu .lang-btn {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Surprise Element */
+        .surprise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--deep-blue) 0%, #000 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 100;
+            transition: opacity 1s ease;
+        }
+
+        .surprise.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .surprise-content {
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .surprise h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .urdu .surprise h2 {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        .surprise p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .language-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .continue-btn {
+            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--gold), var(--light-blue));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .continue-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .urdu-btn {
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Surprise Intro -->
+    <div class="surprise" id="surprise">
+        <div class="surprise-content">
+            <h2 id="surprise-title">You're Invited!</h2>
+            <p id="surprise-subtitle">Join us in celebrating the union of AAA & BBB</p>
+            <div class="language-buttons">
+                <button class="continue-btn" id="continueBtnEn">Open Invitation</button>
+                <button class="continue-btn urdu-btn" id="continueBtnUr">دعوت نامہ کھولیں</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="lang-btn" id="toggleLang">اردو</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" id="mainContent">
+        <header>
+            <div class="header-bg"></div>
+            <div class="header-content">
+                <h1 id="main-title">NIKAH & WALIMA</h1>
+                
+                <!-- Bismillah Section -->
+                <div id="bismillah-section">
+                    <div class="bismillah-arabic" id="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+                    <div class="bismillah" id="bismillah-urdu">شروع اللہ کے نام سے جو بڑا مہربان اور رحم والا ہے</div>
+                </div>
+                
+                <div class="couple-names">
+                    <div class="name" id="groom-name">AAA</div>
+                    <div class="and" id="and-symbol">&</div>
+                    <div class="name" id="bride-name">BBB</div>
+                </div>
+                
+                <p class="subtitle" id="honor-message">TOGETHER WITH THEIR FAMILIES, REQUEST THE HONOUR OF YOUR PRESENCE</p>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="event-card">
+                <h2 class="event-title"><i class="fas fa-mosque"></i> <span id="nikah-title">NIKAH CEREMONY</span></h2>
+                <div class="event-details">
+                    <p><i class="far fa-calendar-alt"></i> <span class="date" id="nikah-date">1st January, 2026</span></p>
+                    <p><i class="far fa-clock"></i> <span id="nikah-time">Time: To be announced</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="nikah-venue">Venue: Satna City, Madhya Pradesh</span></p>
+                </div>
+                
+                <!-- Nikah Countdown Timer -->
+                <div class="countdown-container">
+                    <div class="countdown-title" id="nikah-countdown-title">Time Until Nikah</div>
+                    <div class="countdown" id="nikahCountdown">
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="nikahDays">000</div>
+                            <div class="countdown-label" id="nikah-days-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="nikahHours">00</div>
+                            <div class="countdown-label" id="nikah-hours-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="nikahMinutes">00</div>
+                            <div class="countdown-label" id="nikah-minutes-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="nikahSeconds">00</div>
+                            <div class="countdown-label" id="nikah-seconds-label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p id="nikah-desc">The sacred Nikah ceremony will unite AAA and BBB in matrimony according to Islamic traditions.</p>
+            </div>
+
+            <div class="event-card">
+                <h2 class="event-title"><i class="fas fa-utensils"></i> <span id="walima-title">WALIMA RECEPTION</span></h2>
+                <div class="event-details">
+                    <p><i class="far fa-calendar-alt"></i> <span class="date" id="walima-date">4th January, 2026</span></p>
+                    <p><i class="far fa-clock"></i> <span id="walima-time">Time: To be announced</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="walima-venue">Venue: Kanpur, Uttar Pradesh</span></p>
+                </div>
+                
+                <!-- Walima Countdown Timer -->
+                <div class="countdown-container">
+                    <div class="countdown-title" id="walima-countdown-title">Time Until Walima</div>
+                    <div class="countdown" id="walimaCountdown">
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="walimaDays">000</div>
+                            <div class="countdown-label" id="walima-days-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="walimaHours">00</div>
+                            <div class="countdown-label" id="walima-hours-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="walimaMinutes">00</div>
+                            <div class="countdown-label" id="walima-minutes-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="walimaSeconds">00</div>
+                            <div class="countdown-label" id="walima-seconds-label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p id="walima-desc">Join us for the Walima reception to celebrate the newly married couple with family and friends.</p>
+            </div>
+        </div>
+
+        <div class="visitor-counter">
+            <p class="counter-title" id="visitor-title">Guests Who Have Viewed This Invitation</p>
+            <div class="counter-number" id="counter">0000</div>
+        </div>
+
+        <footer>
+            <p class="blessing" id="blessing">"And one of His signs is that He created for you spouses from among yourselves so that you may find comfort in them. And He has placed between you compassion and mercy."</p>
+            <p id="quran-reference">- Quran (30:21)</p>
+        </footer>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <script>
+        // Language content
+        const content = {
+            en: {
+                // Surprise screen
+                'surprise-title': "You're Invited!",
+                'surprise-subtitle': "Join us in celebrating the union of AAA & BBB",
+                
+                // Main content
+                'main-title': "NIKAH & WALIMA",
+                'bismillah-arabic': "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+                'bismillah-urdu': "شروع اللہ کے نام سے جو بڑا مہربان اور رحم والا ہے",
+                'groom-name': "AAA",
+                'bride-name': "BBB",
+                'and-symbol': "&",
+                'honor-message': "TOGETHER WITH THEIR FAMILIES, REQUEST THE HONOUR OF YOUR PRESENCE",
+
+                // Nikah
+                'nikah-title': "NIKAH CEREMONY",
+                'nikah-date': "1st January, 2026",
+                'nikah-time': "Time: To be announced",
+                'nikah-venue': "Venue: Satna City, Madhya Pradesh",
+                'nikah-desc': "The sacred Nikah ceremony will unite AAA and BBB in matrimony according to Islamic traditions.",
+                'nikah-countdown-title': "Time Until Nikah",
+
+                // Walima
+                'walima-title': "WALIMA RECEPTION",
+                'walima-date': "4th January, 2026",
+                'walima-time': "Time: To be announced",
+                'walima-venue': "Venue: Kanpur, Uttar Pradesh",
+                'walima-desc': "Join us for the Walima reception to celebrate the newly married couple with family and friends.",
+                'walima-countdown-title': "Time Until Walima",
+
+                // Countdown labels
+                'nikah-days-label': "Days",
+                'nikah-hours-label': "Hours",
+                'nikah-minutes-label': "Minutes",
+                'nikah-seconds-label': "Seconds",
+                'walima-days-label': "Days",
+                'walima-hours-label': "Hours",
+                'walima-minutes-label': "Minutes",
+                'walima-seconds-label': "Seconds",
+
+                // Visitor counter
+                'visitor-title': "Guests Who Have Viewed This Invitation",
+
+                // Footer
+                'blessing': "\"And one of His signs is that He created for you spouses from among yourselves so that you may find comfort in them. And He has placed between you compassion and mercy.\"",
+                'quran-reference': "- Quran (30:21)",
+
+                // Language toggle
+                'toggle-lang': "اردو"
+            },
+            ur: {
+                // Surprise screen
+                'surprise-title': "آپ کو مدعو کیا گیا ہے!",
+                'surprise-subtitle': "AAA اور BBB کے اتحاد کی تقریب میں شرکت کریں",
+                
+                // Main content
+                'main-title': "نکاح و ولیمہ",
+                'bismillah-arabic': "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+                'bismillah-urdu': "شروع اللہ کے نام سے جو بڑا مہربان اور رحم والا ہے",
+                'groom-name': "AAA",
+                'bride-name': "BBB",
+                'and-symbol': "اور",
+                'honor-message': "اپنے خاندان کے ساتھ مل کر آپ کی شرکت کی درخواست کرتے ہیں",
+
+                // Nikah
+                'nikah-title': "نکاح کی تقریب",
+                'nikah-date': "1 جنوری، 2026",
+                'nikah-time': "وقت: اعلان کرنا باقی",
+                'nikah-venue': "مقام: ستنا شہر، مدھیہ پردیش",
+                'nikah-desc': "پاکیزہ نکاح کی تقریب AAA اور BBB کو اسلامی روایات کے مطابق ازدواجی بندھن میں باندھے گی۔",
+                'nikah-countdown-title': "نکاح تک وقت",
+
+                // Walima
+                'walima-title': "ولیمہ کی تقریب",
+                'walima-date': "4 جنوری، 2026",
+                'walima-time': "وقت: اعلان کرنا باقی",
+                'walima-venue': "مقام: کانپور، اتر پردیش",
+                'walima-desc': "نئے ازدواجی جوڑے کی خوشی میں ولیمہ کی تقریب میں خاندان اور دوستوں کے ساتھ شامل ہوں۔",
+                'walima-countdown-title': "ولیمہ تک وقت",
+
+                // Countdown labels
+                'nikah-days-label': "دن",
+                'nikah-hours-label': "گھنٹے",
+                'nikah-minutes-label': "منٹ",
+                'nikah-seconds-label': "سیکنڈ",
+                'walima-days-label': "دن",
+                'walima-hours-label': "گھنٹے",
+                'walima-minutes-label': "منٹ",
+                'walima-seconds-label': "سیکنڈ",
+
+                // Visitor counter
+                'visitor-title': "دعوت نامہ دیکھنے والے مہمانوں کی تعداد",
+
+                // Footer
+                'blessing': "\"اور اس کی نشانیوں میں سے ہے کہ اس نے تمہارے لیے تمہیں میں سے بیویاں پیدا کیں تاکہ تم ان کے پاس سکون حاصل کرو، اور اس نے تمہارے درمیان محبت اور رحمت پیدا کر دی۔\"",
+                'quran-reference': "- قرآن (30:21)",
+
+                // Language toggle
+                'toggle-lang': "English"
+            }
+        };
+
+        // Surprise intro handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const surprise = document.getElementById('surprise');
+            const continueBtnEn = document.getElementById('continueBtnEn');
+            const continueBtnUr = document.getElementById('continueBtnUr');
+            const mainContent = document.getElementById('mainContent');
+            const toggleLangBtn = document.getElementById('toggleLang');
+            const body = document.body;
+            
+            let currentLang = 'en';
+            
+            // Show main content after clicking continue (English)
+            continueBtnEn.addEventListener('click', function() {
+                surprise.classList.add('hidden');
+                mainContent.style.display = 'block';
+                setLanguage('en');
+                
+                // Start counter animation
+                animateCounter();
+                
+                // Start countdown timers
+                startCountdowns();
+            });
+            
+            // Show main content after clicking continue (Urdu)
+            continueBtnUr.addEventListener('click', function() {
+                surprise.classList.add('hidden');
+                mainContent.style.display = 'block';
+                setLanguage('ur');
+                
+                // Start counter animation
+                animateCounter();
+                
+                // Start countdown timers
+                startCountdowns();
+            });
+            
+            // Toggle language
+            toggleLangBtn.addEventListener('click', function() {
+                currentLang = currentLang === 'en' ? 'ur' : 'en';
+                setLanguage(currentLang);
+            });
+            
+            // Initially hide main content
+            mainContent.style.display = 'none';
+            
+            // Set language function
+            function setLanguage(lang) {
+                currentLang = lang;
+                
+                // Update all text content
+                for (const key in content[lang]) {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.textContent = content[lang][key];
+                    }
+                }
+                
+                // Update body direction and class
+                if (lang === 'ur') {
+                    body.classList.add('urdu');
+                    body.setAttribute('dir', 'rtl');
+                } else {
+                    body.classList.remove('urdu');
+                    body.setAttribute('dir', 'ltr');
+                }
+            }
+            
+            // Visitor counter functionality
+            function animateCounter() {
+                // Get current count from localStorage or set to 0
+                let count = localStorage.getItem('visitorCount');
+                if (!count) {
+                    count = 0;
+                } else {
+                    count = parseInt(count);
+                }
+                
+                // Increment count
+                count++;
+                
+                // Save to localStorage
+                localStorage.setItem('visitorCount', count);
+                
+                // Animate counter
+                const counterElement = document.getElementById('counter');
+                let current = 0;
+                const increment = Math.ceil(count / 100);
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= count) {
+                        current = count;
+                        clearInterval(timer);
+                    }
+                    
+                    // Format with leading zeros
+                    counterElement.textContent = current.toString().padStart(4, '0');
+                }, 20);
+            }
+            
+            // Countdown timer functionality
+            function startCountdowns() {
+                // Set the dates for Nikah and Walima (corrected to 2026)
+                const nikahDate = new Date('January 1, 2026 12:00:00').getTime();
+                const walimaDate = new Date('January 4, 2026 18:00:00').getTime();
+                
+                // Update countdowns every second
+                const countdownFunction = setInterval(function() {
+                    // Get current date and time
+                    const now = new Date().getTime();
+                    
+                    // Calculate time remaining for Nikah
+                    const nikahDistance = nikahDate - now;
+                    
+                    // Calculate time remaining for Walima
+                    const walimaDistance = walimaDate - now;
+                    
+                    // If both countdowns have ended, clear the interval
+                    if (nikahDistance < 0 && walimaDistance < 0) {
+                        clearInterval(countdownFunction);
+                        document.getElementById('nikahCountdown').innerHTML = `<div class='countdown-title'>${currentLang === 'en' ? 'Nikah Ceremony Has Begun!' : 'نکاح کی تقریب شروع ہو چکی ہے!'}</div>`;
+                        document.getElementById('walimaCountdown').innerHTML = `<div class='countdown-title'>${currentLang === 'en' ? 'Walima Celebration Has Begun!' : 'ولیمہ کی تقریب شروع ہو چکی ہے!'}</div>`;
+                        return;
+                    }
+                    
+                    // Update Nikah countdown if not passed
+                    if (nikahDistance > 0) {
+                        const nikahDays = Math.floor(nikahDistance / (1000 * 60 * 60 * 24));
+                        const nikahHours = Math.floor((nikahDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const nikahMinutes = Math.floor((nikahDistance % (1000 * 60 * 60)) / (1000 * 60));
+                        const nikahSeconds = Math.floor((nikahDistance % (1000 * 60)) / 1000);
+                        
+                        document.getElementById('nikahDays').textContent = nikahDays.toString().padStart(3, '0');
+                        document.getElementById('nikahHours').textContent = nikahHours.toString().padStart(2, '0');
+                        document.getElementById('nikahMinutes').textContent = nikahMinutes.toString().padStart(2, '0');
+                        document.getElementById('nikahSeconds').textContent = nikahSeconds.toString().padStart(2, '0');
+                    } else {
+                        document.getElementById('nikahCountdown').innerHTML = `<div class='countdown-title'>${currentLang === 'en' ? 'Nikah Ceremony Has Begun!' : 'نکاح کی تقریب شروع ہو چکی ہے!'}</div>`;
+                    }
+                    
+                    // Update Walima countdown if not passed
+                    if (walimaDistance > 0) {
+                        const walimaDays = Math.floor(walimaDistance / (1000 * 60 * 60 * 24));
+                        const walimaHours = Math.floor((walimaDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const walimaMinutes = Math.floor((walimaDistance % (1000 * 60 * 60)) / (1000 * 60));
+                        const walimaSeconds = Math.floor((walimaDistance % (1000 * 60)) / 1000);
+                        
+                        document.getElementById('walimaDays').textContent = walimaDays.toString().padStart(3, '0');
+                        document.getElementById('walimaHours').textContent = walimaHours.toString().padStart(2, '0');
+                        document.getElementById('walimaMinutes').textContent = walimaMinutes.toString().padStart(2, '0');
+                        document.getElementById('walimaSeconds').textContent = walimaSeconds.toString().padStart(2, '0');
+                    } else {
+                        document.getElementById('walimaCountdown').innerHTML = `<div class='countdown-title'>${currentLang === 'en' ? 'Walima Celebration Has Begun!' : 'ولیمہ کی تقریب شروع ہو چکی ہے!'}</div>`;
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
