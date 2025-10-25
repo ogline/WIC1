@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Alex+Brush&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -67,15 +68,17 @@
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif;
             font-size: 3.5rem;
             margin-bottom: 10px;
             color: var(--gold-dark);
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            letter-spacing: 2px;
         }
 
         .urdu h1 {
             font-family: 'Noto Nastaliq Urdu', serif;
+            letter-spacing: 0;
         }
 
         .subtitle {
@@ -83,10 +86,12 @@
             letter-spacing: 3px;
             margin-bottom: 30px;
             color: var(--text-dark);
+            font-family: 'Cinzel', serif;
         }
 
         .urdu .subtitle {
             letter-spacing: 0;
+            font-family: 'Noto Nastaliq Urdu', serif;
         }
 
         .bismillah {
@@ -115,17 +120,26 @@
         }
 
         .name {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            padding: 15px 30px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.5);
+            padding: 20px 40px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(139, 69, 19, 0.1);
+            box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
             position: relative;
             overflow: hidden;
             color: var(--gold-dark);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .urdu .name {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 2.8rem;
+            line-height: 1.4;
         }
 
         .name::before {
@@ -135,7 +149,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
             transition: 0.5s;
         }
 
@@ -143,14 +157,22 @@
             left: 100%;
         }
 
+        .name:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(139, 69, 19, 0.25);
+        }
+
         .and {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--gold-dark);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .urdu .and {
             font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 2.2rem;
         }
 
         /* Main Content Styles */
@@ -164,6 +186,19 @@
         @media (max-width: 768px) {
             .main-content {
                 grid-template-columns: 1fr;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+                padding: 15px 25px;
+            }
+            
+            .urdu .name {
+                font-size: 2rem;
+            }
+            
+            .and {
+                font-size: 2rem;
             }
         }
 
@@ -200,7 +235,7 @@
         }
 
         .event-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif;
             font-size: 2rem;
             color: var(--gold-dark);
             margin-bottom: 20px;
@@ -240,6 +275,7 @@
             font-weight: 600;
             color: var(--brown);
             margin: 15px 0;
+            font-family: 'Cinzel', serif;
         }
 
         /* Countdown Timer Styles */
@@ -252,7 +288,7 @@
             font-size: 1.5rem;
             color: var(--gold-dark);
             margin-bottom: 15px;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif;
         }
 
         .urdu .countdown-title {
@@ -273,7 +309,7 @@
         }
 
         .countdown-value {
-            font-family: 'Courier New', monospace;
+            font-family: 'Cinzel', monospace;
             font-size: 2.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
@@ -377,6 +413,7 @@
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: var(--gold-dark);
+            font-family: 'Cinzel', serif;
         }
 
         .urdu .counter-title {
@@ -388,6 +425,7 @@
             font-weight: 700;
             color: var(--brown);
             text-shadow: 0 0 10px rgba(139, 69, 19, 0.3);
+            font-family: 'Cinzel', serif;
         }
 
         /* Footer */
@@ -403,10 +441,12 @@
             font-size: 1.5rem;
             color: var(--gold-dark);
             margin-bottom: 20px;
+            font-style: italic;
         }
 
         .urdu .blessing {
             font-family: 'Noto Nastaliq Urdu', serif;
+            font-style: normal;
         }
 
         /* Language Toggle */
@@ -493,7 +533,7 @@
         }
 
         .surprise h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif;
             font-size: 4rem;
             color: var(--gold-dark);
             margin-bottom: 20px;
@@ -507,6 +547,7 @@
             font-size: 1.5rem;
             margin-bottom: 30px;
             color: var(--text-dark);
+            font-family: 'Playfair Display', serif;
         }
 
         .language-buttons {
@@ -526,6 +567,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            font-family: 'Cinzel', serif;
         }
 
         .continue-btn:hover {
@@ -535,6 +577,22 @@
 
         .urdu-btn {
             font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        /* Royal decorative elements */
+        .royal-border {
+            position: relative;
+            padding: 10px;
+        }
+
+        .royal-border::before {
+            content: "❖";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 1.5rem;
         }
     </style>
 </head>
@@ -569,7 +627,7 @@
                     <div class="bismillah" id="bismillah-urdu">شروع اللہ کے نام سے جو بڑا مہربان اور رحم والا ہے</div>
                 </div>
                 
-                <div class="couple-names">
+                <div class="couple-names royal-border">
                     <div class="name" id="groom-name">Tauheed Iqbal</div>
                     <div class="and" id="and-symbol">&</div>
                     <div class="name" id="bride-name">Zikra Yunus</div>
